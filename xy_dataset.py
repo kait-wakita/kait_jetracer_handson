@@ -65,7 +65,7 @@ class XYDataset(torch.utils.data.Dataset):
         if not os.path.exists(category_dir):
             subprocess.call(['mkdir', '-p', category_dir])
             
-        filename = '%d_%d_%s.jpg' % (x, y, str(uuid.uuid1()))
+        filename = '%03d_%03d_%s.jpg' % (x, y, str(uuid.uuid1()))
         
         image_path = os.path.join(category_dir, filename)
         cv2.imwrite(image_path, image)
